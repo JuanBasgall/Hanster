@@ -1,0 +1,284 @@
+/*pagina de ayuda para el border radius: 
+https://9elements.github.io/fancy-border-radius/
+
+background:radial-gradient(circle at 33% 33%, black 20%, rgb(51, 51, 51),black);
+*/
+
+body{
+    overflow: hidden;
+    height: 100vh;
+    background:black;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+label input[type="checkbox"]{
+    -webkit-appearance: none;
+}
+
+label{
+    position: relative;
+    left: -10%;
+    top: -10%;
+}
+p{
+    color: red;
+    margin 0;
+    padding: 0;
+    position: relative;
+    font-weight: 700;
+    font-size: 60px;
+    font-family: 'Coda', cursive;
+    text-shadow: 0 0 5px tomato;
+    animation: blow .2s 26, desaparecer .6s 5s forwards 1;
+}
+
+label .btn{
+    user-select: none;
+    background: rgba(70, 12, 1, 0.925);
+    height: 100px;
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    border: 1px solid red;
+    border-radius: 15px;
+    box-shadow:
+            0 0 20px 5px red,
+            0 0 10px 5px red inset;
+    animation: blowbox 2s infinite, explotar .5s  5s forwards 1;
+}
+
+@keyframes blow {
+    0%{
+        text-shadow: 0 0 5px tomato;
+    }
+    50%{
+        text-shadow: 0 0 15px tomato;
+    }
+    100%{
+        text-shadow: 0 0 5px tomato;
+    }
+}
+@keyframes blowbox {
+    0%{
+        box-shadow:
+            0 0 20px 3px red,
+            0 0 80px 12px rgba(255, 99, 71, 0.5),
+            0 0 10px 3px red inset;
+    }
+    50%{
+        box-shadow:
+            0 0 20px 8px red,
+            0 0 80px 18px rgba(255, 99, 71, 0.719),
+            0 0 10px 8px red inset;
+    }
+    100%{
+        box-shadow:
+            0 0 20px 3px red,
+            0 0 80px 12px rgba(255, 99, 71, 0.5),
+            0 0 10px 3px red inset;
+    }
+}
+
+@keyframes explotar {
+    50%{
+        
+    background: red;
+    text-shadow: 0 0 25px tomato;
+    box-shadow:
+            0 0 150px 355px red,
+            0 0 10px 10px red inset;
+    }
+    100%{
+        color: transparent;
+        background: rgba(255, 0, 0, 0);
+    text-shadow: 0 0 25px rgba(255, 99, 71, 0);
+    box-shadow:
+            0 0 150px 355px rgba(255, 0, 0, 0),
+            0 0 10px 10px rgba(255, 0, 0, 0) inset;
+        border: 1px solid transparent;
+    }
+    
+}
+@keyframes desaparecer {
+    100%{
+        color: transparent;
+        text-shadow: transparent;
+    }
+    
+}
+
+/*
+input{
+    transform: scale(4);
+}
+label{
+    position: relative;
+    width: 1700px;
+    height: 630px;
+    overflow: hidden;
+    display: flex;
+    padding: 60px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+label .btn{
+    user-select: none;
+    background: radial-gradient( rgba(28, 90, 29, 0.6) 1%, rgb(3, 46, 3)30%),rgba(70,200,73,0.6)95% ;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 2px solid rgba(70,200,73,255);
+    overflow: visible;
+    box-shadow:
+            0 0 30px 15px rgba(0, 0, 0, 0.384),
+            0 0 20px 5px rgba(26,114,30,255) inset;
+    animation: latir 2s cubic-bezier(0.215, 0.610, 0.355, 1) infinite;
+    font-size: 200px;
+    color: green;
+    transition: .5s;
+}
+.btn::after{
+    padding: 10px 20px 0 20px;
+    font-size: 80px;
+    color: transparent;
+    user-select: none;
+    content: 'Botón de inicio';
+    border-radius: 20px;
+    text-shadow: none;
+    height: 120px;
+    width: 600px;
+    position: absolute;
+    left: 20px;
+    top: -220px;   
+}
+label input[type="checkbox"]{
+    -webkit-appearance: none;
+}
+label input[type="checkbox"]:checked ~ .btn{
+    transition: .5s;
+    background: rgba(78, 15, 4, 0.925);
+    width: 300px;
+    box-shadow:
+            0 0 20px 5px red,
+            0 0 10px 5px red inset;
+    border: 2px solid red;
+    animation: latirrojo linear 5s alternate infinite;
+    color: red;
+    text-shadow: 0 0 5px red;
+}
+
+/*xxxxxxxxxxxxxxx EFECTOS HOVER xxxxxxxxxxxxxxxxxx*/
+
+
+/*
+
+.btn:hover{
+    cursor: pointer;
+    animation: none;
+    color: greenyellow;
+    box-shadow:
+            0 0 40px 25px rgba(70,200,73,255),
+            0 0 20px 5px rgba(26,114,30,255) inset;
+    text-shadow: 0 0 35px greenyellow;
+}
+label input[type="checkbox"]:checked ~ .btn:hover{
+    animation: none;
+    box-shadow:
+            0 0 40px 25px red,
+            0 0 20px 5px red inset;
+    text-shadow: 0 0 25px red;
+}
+
+.btn:hover:after{
+    animation: appear .5s 1.5s forwards 1;
+}
+label input[type="checkbox"]:checked ~ .btn:hover::after{
+    animation: appearoff .5s 1.5s forwards 1;
+}
+
+
+
+
+  /*xxxxxxxxxxxxxxxxxxxxxxxxxxxx animaciones xxxxxxxxxxxxxxxxxxxx*/
+
+
+@keyframes appear {
+    0%{
+        filter: blur(80px);
+    }
+    100%{
+        background: rgba(22, 22, 22, 0.747);
+        color: silver;
+        text-shadow: 0 0 25px lightblue;
+        border: 2px solid rgb(37, 37, 37);
+    }
+}
+@keyframes appearoff {
+    0%{
+        filter: blur(80px);
+    }
+    100%{
+        content: 'Boton de OFF';
+        background: rgba(22, 22, 22, 0.747);
+        color: silver;
+        text-shadow: 0 0 25px lightblue;
+        border: 2px solid rgb(37, 37, 37);
+    }
+    
+}
+@keyframes latir{
+    0%{
+        transform: scale(.99);
+        box-shadow:
+            0 0 20px 5px rgba(26,114,30,255) inset
+            0px 0px 5px 5px rgba(70,200,73,.2);
+    }
+    30%{
+        transform: scale(1);
+        box-shadow:
+            0 0 20px 5px rgba(26,114,30,255) inset,
+            0px 0px 5px 5px rgba(70,200,73,.2);
+    }
+    100%{
+        transform: scale(.99);
+        box-shadow:
+            0 0 20px 5px rgba(26,114,30,255) inset,
+            0 0 10px 200px rgba(24, 24, 24, 0);
+    }
+    
+}
+
+@keyframes latirrojo{
+    0%{
+        border-radius: 51% 49% 54% 46% / 45% 62% 38% 55% ;
+    }
+   
+    20%{
+        border-radius: 49% 51% 47% 53% / 48% 55% 45% 52%   ;
+    }
+    40%{
+        border-radius: 41% 59% 31% 69% / 61% 45% 55% 39% ;
+    }
+    60%{
+        border-radius: 43% 57% 37% 63% / 56% 51% 49% 44%  ;
+    }
+    80%{
+        border-radius: 55% 45% 49% 51% / 46% 58% 42% 54%   ;
+    }
+    100%{
+        border-radius: 51% 49% 54% 46% / 45% 62% 38% 55% ;
+    }
+}

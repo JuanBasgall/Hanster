@@ -7,11 +7,11 @@ background:radial-gradient(circle at 33% 33%, black 20%, rgb(51, 51, 51),black);
 body{
     overflow: hidden;
     height: 100vh;
+    width: 100vw;
     background:black;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    flex-direction: column;
+    justify-content: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -21,8 +21,11 @@ label input[type="checkbox"]{
 
 label{
     position: relative;
-    left: -10%;
-    top: -10%;
+    height: 40vh;
+    width: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 p{
     color: red;
@@ -44,7 +47,7 @@ label .btn{
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
+    position: relative;
     border: 1px solid red;
     border-radius: 15px;
     box-shadow:
